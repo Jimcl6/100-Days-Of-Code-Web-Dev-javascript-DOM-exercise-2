@@ -5,18 +5,28 @@
 const firstButtonElement = document.getElementsByTagName("button")[0];
 //    - Select the second button by using an "id"
 const secondButtonElement = document.getElementById("second-button");
+// console.dir(secondButtonElement);
 // 2) Add "click" event listener to both buttons (with two different functions).
+//    The functions should "console.dir()" the clicked buttons.
+// const firstParagraphElement = document.body.children[2].children[1];
+const firstParagraphElement = document.getElementById("first-paragraph");
+const thirdParagraphElement = document.body.children[2].children[3];
 
-function firstEventListener(event) {
-    let outputButton = firstButton.
+console.dir(firstParagraphElement);
+
+function firstEventListener() {
+  //    - Output the first button by using the variable in which it's stored
+  let removeParagraph = thirdParagraphElement.remove();
+  return removeParagraph;
 }
 
-firstButtonElement.addEventListener('click')
-secondButtonElement.addEventListener('click')
+function secondEventListener() {
+  //    - Output the second button WITHOUT using the variable in which it's stored
+  firstParagraphElement.style.backgroundColor = "blue";
+}
+firstButtonElement.addEventListener("click", firstEventListener);
+secondButtonElement.addEventListener("click", secondEventListener);
 
-//    The functions should "console.dir()" the clicked buttons.
-//    - Output the first button by using the variable in which it's stored
-//    - Output the second button WITHOUT using the variable in which it's stored
 // 3) Now select and store the paragraphs mentioned in the text you see on the page
 //    (first and third paragraph)
 //    - Select BOTH paragraphs by drilling into the document and "navigating" to the
