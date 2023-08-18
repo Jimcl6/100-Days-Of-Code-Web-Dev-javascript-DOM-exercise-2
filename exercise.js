@@ -2,31 +2,13 @@
 
 // 1) Select the two <button> elements and store them in two different variables.
 //    - Select the first button without adding or using any "id"
-const firstButtonElement = document.getElementsByTagName("button")[0];
 //    - Select the second button by using an "id"
-const secondButtonElement = document.getElementById("second-button");
 // console.dir(secondButtonElement);
 // 2) Add "click" event listener to both buttons (with two different functions).
 //    The functions should "console.dir()" the clicked buttons.
+//    - Output the first button by using the variable in which it's stored
+//    - Output the second button WITHOUT using the variable in which it's stored
 // const firstParagraphElement = document.body.children[2].children[1];
-const firstParagraphElement = document.getElementById("first-paragraph");
-const thirdParagraphElement = document.body.children[2].children[3];
-
-console.dir(firstParagraphElement);
-
-function firstEventListener() {
-  //    - Output the first button by using the variable in which it's stored
-  let removeParagraph = thirdParagraphElement.remove();
-  return removeParagraph;
-}
-
-function secondEventListener() {
-  //    - Output the second button WITHOUT using the variable in which it's stored
-  firstParagraphElement.style.backgroundColor = "blue";
-}
-firstButtonElement.addEventListener("click", firstEventListener);
-secondButtonElement.addEventListener("click", secondEventListener);
-
 // 3) Now select and store the paragraphs mentioned in the text you see on the page
 //    (first and third paragraph)
 //    - Select BOTH paragraphs by drilling into the document and "navigating" to the
@@ -37,3 +19,30 @@ secondButtonElement.addEventListener("click", secondEventListener);
 //    - The second button changes the background color of the first paragraph to blue
 // 5) Solve (4) both by changing the "inline styles" as well as by adding CSS classes
 //    Note: You'll have to add those classes to the styles.css file first!
+
+// Answers
+
+const firstButtonElement = document.getElementsByTagName("button")[0];
+const secondButtonElement = document.getElementById("second-button");
+
+const firstParagraphElement = document.body.children[2].children[1];
+const thirdParagraphElement = document.body.children[2].children[3];
+
+console.dir(firstParagraphElement);
+
+function firstEventListener() {
+  // bonus:-
+  // thirdParagraphElement.className = "new-class-name";
+  let removeParagraph = thirdParagraphElement.remove();
+  return removeParagraph;
+}
+
+function secondEventListener() {
+  // bonus:-
+  // firstParagraphElement.className = "new-class-name";
+  firstParagraphElement.style.backgroundColor = "blue";
+  firstParagraphElement.style.color = "#fff";
+}
+
+firstButtonElement.addEventListener("click", firstEventListener);
+secondButtonElement.addEventListener("click", secondEventListener);
